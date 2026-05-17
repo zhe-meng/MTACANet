@@ -429,7 +429,7 @@ class MTACANet(nn.Module):
 
 
     def forward(self, x):  #[64, 1, 64, 13, 13]
-        x = x.squeeze(dim=1)
+        # x = x.squeeze(dim=1)
        
         #WTConv
         x = self.wt(x)  #[64, 64, 13, 13]
@@ -484,7 +484,7 @@ if __name__ == '__main__':
     
    
    
-    input = torch.randn(100, 1, 64, 13, 13)
+    input = torch.randn(100, 64, 13, 13)
     
     
     y = model(input)
